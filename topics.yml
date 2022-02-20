@@ -1,0 +1,27 @@
+default:
+  partitions: 1
+  replication-factor: 1
+  config:
+    cleanup.policy: delete
+
+topics:
+
+  topic-with-default-config:
+
+  another-topic-with-defaults:
+
+  default-topic-but-ten-partitions:
+    partitions: 10
+  
+  topic-for-larger-records:
+    config:
+      max.message.bytes: 4194352 # 4MB
+  
+  default-compacted-topic:
+    config:
+      cleanup.policy: compact
+  
+  compacted-topic-with-two-partitions:
+    partitions: 2
+    config:
+      cleanup.policy: compact
